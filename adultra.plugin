@@ -3,31 +3,25 @@
 #!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
 
 # > 去除 E充电 内部广告  主机名 api-evone.echargenet.com
-^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn\/* reject-dict-200
+^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn\/* reject-200
 ^https:\/\/api-evone\.echargenet\.com\/gw\/evone\.h5gateway\.internal\.registeractivity\.querybyareaid\/1\.0 reject-dict
 
 
-
 # > 去除华宝证券开屏  主机名 api.touker.com
-^https?:\/\/api\.touker\.com\/v2\/IAdvertisementAPI\.queryStartAdvertisement reject-dict-200
+^https?:\/\/api\.touker\.com\/v2\/IAdvertisementAPI\.queryStartAdvertisement reject-200
 
 # >零跑去广告
 ^https?:\/\/apptec\.leapmotor\.com\/app-community\/appZeroTab\/queryContent reject-dict
 ^https?:\/\/apptec\.leapmotor\.com\/appNewInterface\/getAppStartPageInfo script-response-body lingpao.js
-
-
 
 # >优易充
 ^https?:\/\/cdy-cloud-gateway\.renrenchongdian\.com\/cdy-api-app\/promotion\/information\/ reject-dict
 ^https?:\/\/cdy-cloud-gateway\.renrenchongdian\.com\/cdy-api-app\/information\/ reject-dict
 ^https:\/\/cdy-cloud-gateway\.renrenchongdian\.com\/cdy-api-mng\/file\/download.*=[0-9]{13}\.(png|jpg) reject-dict
 
-
 # >掌上精彩
 #cdn-xyk-app.bankofbeijing.com.cn
 ^https:\/\/cdn-xyk-app\.bankofbeijing\.com\.cn\/cdn\/resource\/image\/advertise reject-dict
-
-
 
 
 #百度地图屏蔽开屏广告
@@ -35,16 +29,16 @@
 
 
 # > 光大银行 阳光惠生活
-^https?:\/\/yghsh\.cebbank\.com\/static\/picture\/.*.jpg reject-dict-200
+^https?:\/\/yghsh\.cebbank\.com\/static\/picture\/.*.jpg reject-200
 
 # > 平安好车主
-^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb reject-dict-200
-^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad) reject-dict-200
+^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb reject-200
+^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad) reject-200
 
 # > 漫步者APP
-^https:\/\/edifier-provider\.oss-cn-shenzhen\.aliyuncs\.com\/marquee_img reject-dict-200
+^https:\/\/edifier-provider\.oss-cn-shenzhen\.aliyuncs\.com\/marquee_img reject-200
 
 # > 发现精彩 原规则删除
-^https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125.+2436|.+60176) reject-dict-200
+^https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125.+2436|.+60176) reject-200
 [mitm] 
 hostname = api.touker.com,api-evone.echargenet.com,apptec.leapmotor.com,cdy-cloud-gateway.renrenchongdian.com,device-box.onethingpcs.com,static.95508.com,yghsh.cebbank.com,edifier-provider.oss-cn-shenzhen.aliyuncs.com,cdn-xyk-app.bankofbeijing.com.cn,*.pangolin-sdk-toutiao.*
