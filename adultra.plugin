@@ -1,6 +1,53 @@
 #!name=自用去广告
 #!desc=APP启动页去广告融合ultra
 #!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
-https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125?.+2436|.+%.+%|.+_.+_) reject-dict
+#!name=APP启动页去广告ultra
+#!desc=APP启动页去广告融合ultra
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
+[URL Rewrite]
+# > 去除 E充电 内部广告  主机名 api-evone.echargenet.com
+^https?:\/\/cdn-evone-ceph\.echargenet\.com\/gw-emas-cdn\/* url reject-200
+^https:\/\/api-evone\.echargenet\.com\/gw\/evone\.h5gateway\.internal\.registeractivity\.querybyareaid\/1\.0 url reject
+
+
+
+# > 去除华宝证券开屏  主机名 api.touker.com
+^https?:\/\/api\.touker\.com\/v2\/IAdvertisementAPI\.queryStartAdvertisement url reject-200
+
+# >零跑去广告
+^https?:\/\/apptec\.leapmotor\.com\/app-community\/appZeroTab\/queryContent url reject
+^https?:\/\/apptec\.leapmotor\.com\/appNewInterface\/getAppStartPageInfo url script-response-body lingpao.js
+
+
+
+# >优易充
+^https?:\/\/cdy-cloud-gateway\.renrenchongdian\.com\/cdy-api-app\/promotion\/information\/ url reject
+^https?:\/\/cdy-cloud-gateway\.renrenchongdian\.com\/cdy-api-app\/information\/ url reject
+^https:\/\/cdy-cloud-gateway\.renrenchongdian\.com\/cdy-api-mng\/file\/download.*=[0-9]{13}\.(png|jpg) url reject
+
+
+# >掌上精彩
+#cdn-xyk-app.bankofbeijing.com.cn
+^https:\/\/cdn-xyk-app\.bankofbeijing\.com\.cn\/cdn\/resource\/image\/advertise url reject
+
+
+
+
+#百度地图屏蔽开屏广告
+^https?:\/\/afd\.baidu\.com url reject-dict
+
+
+# > 光大银行 阳光惠生活
+^https?:\/\/yghsh\.cebbank\.com\/static\/picture\/.*.jpg url reject-200
+
+# > 平安好车主
+^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb url reject-200
+^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad) url reject-200
+
+# > 漫步者APP
+^https:\/\/edifier-provider\.oss-cn-shenzhen\.aliyuncs\.com\/marquee_img url reject-200
+
+# > 发现精彩 原规则删除
+^https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125.+2436|.+60176) url reject-200
 [mitm] 
 hostname = api.touker.com,api-evone.echargenet.com,apptec.leapmotor.com,cdy-cloud-gateway.renrenchongdian.com,device-box.onethingpcs.com,static.95508.com,yghsh.cebbank.com,edifier-provider.oss-cn-shenzhen.aliyuncs.com,cdn-xyk-app.bankofbeijing.com.cn,*.pangolin-sdk-toutiao.*
