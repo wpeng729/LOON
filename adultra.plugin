@@ -1,4 +1,7 @@
 #!name=自用去广告
 #!desc=APP启动页去广告融合ultra
 #!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
+# >零跑去广告
 ^https?:\/\/apptec\.leapmotor\.com\/app-community\/appZeroTab\/queryContent reject-dict
+[mitm] 
+hostname = api.touker.com,api-evone.echargenet.com,apptec.leapmotor.com,cdy-cloud-gateway.renrenchongdian.com,device-box.onethingpcs.com,static.95508.com,yghsh.cebbank.com,edifier-provider.oss-cn-shenzhen.aliyuncs.com,cdn-xyk-app.bankofbeijing.com.cn,*.pangolin-sdk-toutiao.*
